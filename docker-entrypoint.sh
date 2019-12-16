@@ -19,5 +19,10 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 # Setup accumulo
 ./bin/uno setup accumulo
 
+# Setup accumulo examples
+git clone https://github.com/apache/accumulo-examples.git install/accumulo-examples 
+./install/accumulo-examples/bin/build
+cp /opt/fluo-uno/install/accumulo-examples/target/accumulo-examples.jar /opt/fluo-uno/install/accumulo-2.0.0/lib
+
 # Start Container in an iteractive mode
 exec /bin/bash
